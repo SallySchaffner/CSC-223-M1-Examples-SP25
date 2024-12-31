@@ -4,12 +4,18 @@ using namespace std;
 
 
 int main() {
-    Car myCar("Toyota", 120);
+    // Create objects (instances of the Car class)
+    Car car1; // Default constructor
+    Car car2("Toyota", 120);  // Constructor with parameters
 
-    // Accessing data using public methods
-    cout << "Initial Brand: " << myCar.getBrand() << endl;
-    myCar.setBrand("Honda");
-    myCar.display();
+    // Set attributes for car1
+    car1.setBrand("Honda");
+    car1.setSpeed(150);
+
+    // Use the objects
+    car1.display(); // Output: Brand: Toyota, Speed: 120 km/h
+    car2.display(); // Output: Brand: Honda, Speed: 150 km/h
 
     return 0;
 }
+

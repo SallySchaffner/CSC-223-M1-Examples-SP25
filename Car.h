@@ -10,19 +10,22 @@ private:
 
 public:
     // Constructor to initialize data
-    Car(string b, int s) {
-        brand = b;
-        speed = s;
-    }
+    Car(string b = "model", int s = 0) : brand(b), speed(s) { };
 
-    // Public getter method (read access)
+    // Public getter methods (read access)
     string getBrand() const {
         return brand;
     }
+    int getSpeed() const {
+        return speed;
+    }
 
-    // Public setter method (write access)
+    // Public setter methods (write access)
     void setBrand(string b) {
         brand = b;
+    }
+    void setSpeed(int s) {
+        speed = s;
     }
 
     // Method to display car details
