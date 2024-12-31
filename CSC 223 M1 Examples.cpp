@@ -1,27 +1,40 @@
 #include <iostream>
 using namespace std;
 
-class Complex {
-private:
-    double real, imag;
-
+// Base class
+class Shape {
 public:
-    Complex(double r, double i) : real(r), imag(i) {}
-
-    // Overloading the '+' operator
-    Complex operator+(const Complex& c) {
-        return Complex(real + c.real, imag + c.imag);
+    virtual void draw() const {
+        cout << "Drawing a generic shape" << endl;
     }
+};
 
-    void display() const {
-        cout << real << " + " << imag << "i" << endl;
+// Derived class
+class Circle : public Shape {
+public:
+    void draw() const override {
+        cout << "Drawing a circle" << endl;
+    }
+};
+
+// Derived class
+class Rectangle : public Shape {
+public:
+    void draw() const override {
+        cout << "Drawing a rectangle" << endl;
     }
 };
 
 int main() {
-    Complex c1(1.0, 2.0), c2(2.5, 3.5);
-    Complex c3 = c1 + c2; // Using overloaded '+' operator
-    c3.display();
+    Shape* shape1 = new Circle();
+    Shape* shape2 = new Rectangle();
+
+    // Calls the derived class methods using base class pointers
+    shape1->draw(); // Output: Drawing a circle
+    shape2->draw(); // Output: Drawing a rectangle
+
+    delete shape1;
+    delete shape2;
 
     return 0;
 }
