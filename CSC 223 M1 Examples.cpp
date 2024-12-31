@@ -1,23 +1,39 @@
 #include <iostream>
 using namespace std;
 
-class CompileTimeExample {
+// Base class
+class Shape {
 public:
-    // Function overloading (compile-time binding)
-    void display(int x) {
-        cout << "Integer: " << x << endl;
+    virtual void draw() const { // Virtual function
+        cout << "Drawing a generic shape" << endl;
     }
+};
 
-    void display(double x) {
-        cout << "Double: " << x << endl;
+// Derived class
+class Circle : public Shape {
+public:
+    void draw() const override {
+        cout << "Drawing a circle" << endl;
+    }
+};
+
+// Derived class
+class Rectangle : public Shape {
+public:
+    void draw() const override {
+        cout << "Drawing a rectangle" << endl;
     }
 };
 
 int main() {
-    CompileTimeExample obj;
+    Shape* shape1 = new Circle();
+    Shape* shape2 = new Rectangle();
 
-    obj.display(5);      // Calls the version with int parameter
-    obj.display(5.5);    // Calls the version with double parameter
+    shape1->draw();  // Calls Circle::draw (runtime decision)
+    shape2->draw();  // Calls Rectangle::draw (runtime decision)
+
+    delete shape1;
+    delete shape2;
 
     return 0;
 }
