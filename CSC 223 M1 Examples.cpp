@@ -1,10 +1,12 @@
-// CSC 223 M1 Examples.cpp : This file contains examples for the Review of Object-Oriented Programming Module
-//
+#include "Car.h"
+#include "Motorcycle.h"
 
-#include <iostream>
+int main() {
+    Car car1("Toyota", 180);
+    Motorcycle bike1(false, 200);
 
-int main()
-{
-    std::cout << "Review of OOP\n";
+    car1.displayCarDetails();      // Output: Brand: Toyota, Max Speed: 180 km/h
+    bike1.displayMotorcycleDetails(); // Output: Motorcycle, Sidecar: No, Max Speed: 200 km/h
+
+    return 0;
 }
-

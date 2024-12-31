@@ -129,6 +129,11 @@
   <ItemGroup>
     <ClCompile Include="CSC 223 M1 Examples.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Car.h" />
+    <ClInclude Include="Motorcycle.h" />
+    <ClInclude Include="Vehicle.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
