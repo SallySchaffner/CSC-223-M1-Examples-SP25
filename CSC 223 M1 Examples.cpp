@@ -1,10 +1,25 @@
-// CSC 223 M1 Examples.cpp : This file contains examples for the Review of Object-Oriented Programming Module
-//
-
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Review of OOP\n";
+template <typename T>
+class Box {
+private:
+    T content;
+
+public:
+    Box(T value) : content(value) {}
+
+    void display() const {
+        cout << "Content: " << content << endl;
+    }
+};
+
+int main() {
+    Box<int> intBox(42);
+    Box<string> stringBox("Hello Templates");
+
+    intBox.display();       // Output: Content: 42
+    stringBox.display();    // Output: Content: Hello Templates
+
+    return 0;
 }
-
