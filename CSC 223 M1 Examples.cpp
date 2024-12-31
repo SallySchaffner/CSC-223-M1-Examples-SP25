@@ -1,10 +1,15 @@
-// CSC 223 M1 Examples.cpp : This file contains examples for the Review of Object-Oriented Programming Module
-//
-
 #include <iostream>
+#include "Car.h"
+using namespace std;
 
-int main()
-{
-    std::cout << "Review of OOP\n";
+
+int main() {
+    Car myCar("Toyota", 120);
+
+    // Accessing data using public methods
+    cout << "Initial Brand: " << myCar.getBrand() << endl;
+    myCar.setBrand("Honda");
+    myCar.display();
+
+    return 0;
 }
-
