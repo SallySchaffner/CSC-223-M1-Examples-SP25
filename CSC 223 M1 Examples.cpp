@@ -1,10 +1,13 @@
-// CSC 223 M1 Examples.cpp : This file contains examples for the Review of Object-Oriented Programming Module
-//
-
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Review of OOP\n";
+template <typename T>
+T add(T a, T b) {
+    return a + b;
 }
 
+int main() {
+    cout << "Addition of integers: " << add(3, 5) << endl;        // Works with integers
+    cout << "Addition of doubles: " << add(3.5, 5.5) << endl;    // Works with doubles
+    return 0;
+}
